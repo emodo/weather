@@ -1,4 +1,5 @@
 import { defineConfig } from 'umi';
+const repo = 'weather';
 
 export default defineConfig({
   nodeModulesTransform: {
@@ -8,5 +9,8 @@ export default defineConfig({
     { path: '/', component: '@/pages/index' },
   ],
   fastRefresh: {},
-  publicPath: './'
+  hash: true,
+  outputPath: 'docs',
+  base: `/${repo}/`,
+  publicPath: `/${repo}/`,
 });
