@@ -7,9 +7,12 @@ export default defineConfig({
   },
   routes: [
     { path: '/', component: '@/pages/index' },
+    { path: '/detail', component: '@/pages/detail' },
   ],
   fastRefresh: {},
-  hash: true,
+  history: {
+    type: 'hash',
+  },
   outputPath: 'docs',
   base: `/${repo}/`,
   publicPath: `/${repo}/`,
