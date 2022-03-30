@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
+    "@antv/f2": "^4.0.11",
+    "@antv/f2-react": "^4.0.11",
     "react": "17.x",
     "react-dom": "17.x",
     "umi": "^3.5.21"
