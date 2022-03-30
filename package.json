@@ -23,9 +23,11 @@
     "@ant-design/pro-layout": "^6.5.0",
     "@antv/f2": "^4.0.11",
     "@antv/f2-react": "^4.0.11",
+    "dayjs": "^1.11.0",
     "react": "17.x",
     "react-dom": "17.x",
-    "umi": "^3.5.21"
+    "umi": "^3.5.21",
+    "umi-request": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",

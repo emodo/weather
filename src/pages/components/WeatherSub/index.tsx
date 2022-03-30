@@ -1,38 +1,36 @@
 import styles from './index.less';
-import humidityWhite from '@/assets/humidity-white.png'
-import rainWhite from '@/assets/rain-white.png'
-import windWhite from '@/assets/wind-white.png'
+import humidityWhite from '@/assets/humidity-white.png';
+import rainWhite from '@/assets/rain-white.png';
+import windWhite from '@/assets/wind-white.png';
+import { weatherInfoSubTypes } from '@/types';
 
-const list = [{
-  id: 1,
-  title: '降水量',
-  src: rainWhite,
-  value: '6%',
-}, {
-  id: 2,
-  title: '湿度',
-  src: humidityWhite,
-  value: '90%',
-}, {
-  id: 3,
-  title: '风速',
-  src: windWhite,
-  value: '19 km/h',
-}]
+export default function WeatherSub(props: weatherInfoSubTypes) {
+  const { humidity, rain, wind_speed } = props;
 
-export default function WeatherSub() {
   return (
     <div className={styles.weatherSub}>
       <div className={styles.weatherSubInner}>
-        {
-          list.map((item) => <div key={item.id}>
-            <div>
-              <img src={item.src} alt={item.title} />
-              <span className={styles.title}>{item.title}</span>
-            </div>
-            <span className={styles.value}>{item.value}</span>
-          </div>)
-        }
+        <div>
+          <div>
+            <img src={rainWhite} />
+            <span className={styles.title}>降水量</span>
+          </div>
+          <span className={styles.value}>{rain}%</span>
+        </div>
+        <div>
+          <div>
+            <img src={humidityWhite} />
+            <span className={styles.title}>湿度</span>
+          </div>
+          <span className={styles.value}>{humidity}%</span>
+        </div>
+        <div>
+          <div>
+            <img src={windWhite} />
+            <span className={styles.title}>风速</span>
+          </div>
+          <span className={styles.value}>{wind_speed} km/h</span>
+        </div>
       </div>
     </div>
   );
