@@ -11,7 +11,12 @@ import dayjs from 'dayjs';
 const currentWeek = getToday(dayjs().day());
 
 export default function weatherMain() {
-  const [locationInfo, setLocationInfo] = useState<locationInfo>();
+  const [locationInfo, setLocationInfo] = useState<locationInfo>({
+    city: '',
+    province: '',
+    citycode: '',
+    adcode: '',
+  });
   const [location, setLocation] = useState<location>({
     latitude: 0,
     longitude: 0,
@@ -30,6 +35,8 @@ export default function weatherMain() {
       query: {
         latitude: String(location.latitude),
         longitude: String(location.longitude),
+        city: locationInfo.city,
+        province: locationInfo.province,
       },
     });
   };
@@ -60,7 +67,7 @@ export default function weatherMain() {
     const weather = await getWeather({
       lat: res ? res.latitude : 0,
       lon: res ? res.longitude : 0,
-      exclude: '',
+      exclude: 'hourly,daily,minutely,alerts',
     });
 
     setWeatherInfo({
@@ -86,7 +93,6 @@ export default function weatherMain() {
             src={
               isValidParams(weatherInfo.main) && WeatherStatus[weatherInfo.main]
             }
-            alt="sun"
           />
         </div>
         <div className={styles.location}>

@@ -1,5 +1,9 @@
 import styles from './index.less';
 import Sun from '@/assets/weather/sun-day.png';
+import { dailyTypes, weekTypes } from '@/types';
+import { useEffect, useState } from 'react';
+import { getToday, isValidParams, WeatherStatus } from '@/utils';
+import dayjs from 'dayjs';
 
 const weekList = [
   {
@@ -53,12 +57,32 @@ const weekList = [
   },
 ];
 
-export default function Week() {
+export default function Week(props: { weekList: dailyTypes[] }) {
+  const [weekList, setWeekList] = useState<weekTypes[]>();
+
+  useEffect(() => {
+    const newArr = props.weekList.reduce((arr: weekTypes[], cur, index) => {
+      if (index < 24) {
+        arr.push({
+          id: cur.dt,
+          title: getToday(dayjs(dayjs.unix(cur.dt)).day()),
+          img:
+            isValidParams(cur.weather[0].main) &&
+            WeatherStatus[cur.weather[0].main],
+          tempHigh: cur.temp.max,
+          tempLow: cur.temp.min,
+        });
+      }
+      return arr;
+    }, []);
+    setWeekList(newArr);
+  }, [props.weekList]);
+
   return (
     <div className={styles.week}>
       <div className={styles.weekInner}>
         <ul>
-          {weekList.map((item) => (
+          {weekList?.map((item) => (
             <li key={item.id}>
               <div className={styles.title}>{item.title}</div>
               <div>
