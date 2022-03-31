@@ -36,7 +36,7 @@ define(['./workbox-459c3508'], function (e) {
       /^https:\/\/restapi.amap\.com\//,
       new e.NetworkFirst({
         cacheName: 'cached-api',
-        networkTimeoutSeconds: 2,
+        networkTimeoutSeconds: 6,
         plugins: [
           new e.ExpirationPlugin({ maxEntries: 50, maxAgeSeconds: 86400 }),
           new e.CacheableResponsePlugin({ statuses: [0, 200] }),
@@ -48,7 +48,7 @@ define(['./workbox-459c3508'], function (e) {
       /^https:\/\/api.openweathermap\.org\//,
       new e.NetworkFirst({
         cacheName: 'cached-weather-api',
-        networkTimeoutSeconds: 2,
+        networkTimeoutSeconds: 6,
         plugins: [
           new e.ExpirationPlugin({ maxEntries: 50, maxAgeSeconds: 86400 }),
           new e.CacheableResponsePlugin({ statuses: [0, 200] }),

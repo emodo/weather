@@ -1,0 +1,38 @@
+{
+  "deps": {
+    "$CWD$/node_modules/@umijs/renderer-react": "3.5.21",
+    "$CWD$/node_modules/umi/node_modules/@umijs/runtime": "3.5.21",
+    "regenerator-runtime/runtime": "0.13.5",
+    "core-js": "3.6.5",
+    "react": "17.0.2",
+    "react/jsx-runtime": "17.0.2",
+    "$CWD$/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/esm/slicedToArray": "7.12.5",
+    "$CWD$/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/esm/asyncToGenerator": "7.12.5",
+    "$CWD$/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/regenerator": "7.12.5",
+    "$CWD$/node_modules/@umijs/plugin-model/node_modules/fast-deep-equal/index.js": "3.1.1",
+    "store": "2.0.12",
+    "umi-request": "1.4.0",
+    "@antv/f2": "4.0.11",
+    "@antv/f2-react": "4.0.11",
+    "dayjs": "1.11.0",
+    "$CWD$/node_modules/@ahooksjs/use-request": "2.8.15",
+    "$CWD$/node_modules/umi-request": "1.4.0",
+    "$CWD$/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/esm/objectSpread2": "7.12.5",
+    "$CWD$/node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties": "7.12.5",
+    "$CWD$/node_modules/react-helmet": "6.1.0",
+    "antd/es/notification": "4.19.3",
+    "antd/es/notification/style": "4.19.3",
+    "antd/es/message": "4.19.3",
+    "antd/es/message/style": "4.19.3"
+  },
+  "config": {
+    "theme": {
+      "root-entry-name": "default"
+    },
+    "externals": {},
+    "runtimePublicPath": false,
+    "umiVersion": "3.5.21",
+    "bigfishVersion": "null"
+  },
+  "tmpDeps": {}
+}
