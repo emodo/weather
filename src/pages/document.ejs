@@ -9,7 +9,7 @@
    if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         const path = env === 'true' ? '/' : '/weather/';
-          navigator.serviceWorker.register('/weather-service-worker.js').then(registration => {
+          navigator.serviceWorker.register(`${path}weather-service-worker.js`).then(registration => {
           console.log('SW registered: ', registration);
           }).catch(registrationError => {
           console.log('SW registration failed: ', registrationError);

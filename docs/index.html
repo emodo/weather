@@ -13,7 +13,7 @@
         window.addEventListener("load", () => {
           const path = env === "true" ? "/" : "/weather/";
           navigator.serviceWorker
-            .register("/weather-service-worker.js")
+            .register(`${path}weather-service-worker.js`)
             .then((registration) => {
               console.log("SW registered: ", registration);
             })
