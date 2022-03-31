@@ -11,7 +11,7 @@
       const env = "false";
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-          const path = Boolean(env) ? "/" : "/weather/";
+          const path = env === "true" ? "/" : "/weather/";
           navigator.serviceWorker
             .register("/weather-service-worker.js")
             .then((registration) => {
