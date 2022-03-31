@@ -6,6 +6,23 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
     />
+    <title>Weather</title>
+    <script>
+      const env = "false";
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          const path = Boolean(env) ? "/" : "/weather/";
+          navigator.serviceWorker
+            .register("/weather-service-worker.js")
+            .then((registration) => {
+              console.log("SW registered: ", registration);
+            })
+            .catch((registrationError) => {
+              console.log("SW registration failed: ", registrationError);
+            });
+        });
+      }
+    </script>
     <link rel="stylesheet" href="/weather/umi.css" />
     <script>
       window.routerBase = "/weather/";
