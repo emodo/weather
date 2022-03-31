@@ -61,18 +61,16 @@ export default function Week(props: { weekList: dailyTypes[] }) {
   const [weekList, setWeekList] = useState<weekTypes[]>();
 
   useEffect(() => {
-    const newArr = props.weekList.reduce((arr: weekTypes[], cur, index) => {
-      if (index < 24) {
-        arr.push({
-          id: cur.dt,
-          title: getToday(dayjs(dayjs.unix(cur.dt)).day()),
-          img:
-            isValidParams(cur.weather[0].main) &&
-            WeatherStatus[cur.weather[0].main],
-          tempHigh: cur.temp.max,
-          tempLow: cur.temp.min,
-        });
-      }
+    const newArr = props.weekList.reduce((arr: weekTypes[], cur) => {
+      arr.push({
+        id: cur.dt,
+        title: getToday(dayjs(dayjs.unix(cur.dt)).day()),
+        img:
+          isValidParams(cur.weather[0].main) &&
+          WeatherStatus[cur.weather[0].main],
+        tempHigh: cur.temp.max,
+        tempLow: cur.temp.min,
+      });
       return arr;
     }, []);
     setWeekList(newArr);
