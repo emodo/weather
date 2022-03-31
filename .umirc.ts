@@ -75,6 +75,17 @@ export default defineConfig({
             },
           },
           {
+            urlPattern: /\//i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'seed-html',
+              expiration: {
+                maxEntries: 20, //最多缓存20个，超过的按照LRU原则删除
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+              },
+            },
+          },
+          {
             urlPattern: /.*css.*/,
             handler: 'CacheFirst',
             options: {

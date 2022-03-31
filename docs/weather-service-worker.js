@@ -16,15 +16,15 @@ if (!self.define) {
       })
   );
   self.define = (t, c) => {
-    const i =
+    const a =
       e ||
       ('document' in self ? document.currentScript.src : '') ||
       location.href;
-    if (s[i]) return;
-    let a = {};
-    const o = (e) => n(e, i),
-      r = { module: { uri: i }, exports: a, require: o };
-    s[i] = Promise.all(t.map((e) => r[e] || o(e))).then((e) => (c(...e), a));
+    if (s[a]) return;
+    let i = {};
+    const o = (e) => n(e, a),
+      m = { module: { uri: a }, exports: i, require: o };
+    s[a] = Promise.all(t.map((e) => m[e] || o(e))).then((e) => (c(...e), i));
   };
 }
 define(['./workbox-459c3508'], function (e) {
@@ -60,6 +60,16 @@ define(['./workbox-459c3508'], function (e) {
       /.*\.js.*/i,
       new e.CacheFirst({
         cacheName: 'seed-js',
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 20, maxAgeSeconds: 2592e3 }),
+        ],
+      }),
+      'GET',
+    ),
+    e.registerRoute(
+      /\//i,
+      new e.CacheFirst({
+        cacheName: 'seed-html',
         plugins: [
           new e.ExpirationPlugin({ maxEntries: 20, maxAgeSeconds: 2592e3 }),
         ],
