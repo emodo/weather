@@ -18,43 +18,43 @@
             { default: s } = await n.e(456).then(n.t.bind(n, 4456, 23)),
             {
               Chart: r,
-              Area: A,
-              Line: d,
-              Axis: u,
+              Area: d,
+              Line: u,
+              Axis: A,
             } = await n.e(849).then(n.t.bind(n, 3849, 23)),
-            { default: l } = await n.e(701).then(n.t.bind(n, 6701, 23)),
-            { jsx: o } = await n.e(455).then(n.t.bind(n, 4455, 23)),
+            { default: o } = await n.e(701).then(n.t.bind(n, 6701, 23)),
+            { jsx: l } = await n.e(455).then(n.t.bind(n, 4455, 23)),
             { jsxs: h } = await n.e(455).then(n.t.bind(n, 4455, 23));
           function p(t) {
             var e = (0, i.Z)(t.hourList),
               n = c(e, 1),
               a = n[0];
-            return o('div', {
-              className: l.chart,
+            return l('div', {
+              className: o.chart,
               children: h('div', {
-                className: l.chatnner,
+                className: o.chatnner,
                 children: [
-                  o('div', { className: l.title, children: 'Today' }),
+                  l('div', { className: o.title, children: 'Today' }),
                   a && a.length
-                    ? o(s, {
+                    ? l(s, {
                         pixelRatio: window.devicePixelRatio,
                         height: '87',
                         children: h(r, {
                           data: a,
                           scale: { time: { tickCount: 6 }, temp: { min: 0 } },
                           children: [
-                            o(u, {
+                            l(A, {
                               field: 'time',
                               nice: !1,
                               style: { label: { align: 'between' } },
                             }),
-                            o(A, {
+                            l(d, {
                               x: 'time',
                               y: 'temp',
                               color: 'l(90) 0:#E9C939 1:#f7f7f7',
                               shape: 'smooth',
                             }),
-                            o(d, {
+                            l(u, {
                               x: 'time',
                               y: 'temp',
                               color: 'l(90) 0:#E9C939 1:#f7f7f7',
@@ -80,7 +80,7 @@
         async function (t) {
           n.d(e, {
             Z: function () {
-              return d;
+              return u;
             },
           });
           var i = n(6773),
@@ -89,8 +89,8 @@
           const { default: c } = await n.e(813).then(n.t.bind(n, 7813, 23)),
             { default: s } = await n.e(773).then(n.t.bind(n, 7773, 23)),
             { jsx: r } = await n.e(455).then(n.t.bind(n, 4455, 23)),
-            { jsxs: A } = await n.e(455).then(n.t.bind(n, 4455, 23));
-          function d(t) {
+            { jsxs: d } = await n.e(455).then(n.t.bind(n, 4455, 23));
+          function u(t) {
             var e = (0, i.Z)(t.hourList),
               n = c(e, 1),
               a = n[0];
@@ -103,11 +103,11 @@
                     null === a || void 0 === a
                       ? void 0
                       : a.map((t) =>
-                          A(
+                          d(
                             'li',
                             {
                               children: [
-                                A('div', {
+                                d('div', {
                                   className: s.temp,
                                   children: [
                                     t.temp,
@@ -132,6 +132,42 @@
         1,
       );
     },
+    7109: function (t, e, n) {
+      'use strict';
+      n.a(
+        t,
+        async function (t) {
+          n.d(e, {
+            Z: function () {
+              return s;
+            },
+          });
+          const { default: i } = await n.e(921).then(n.t.bind(n, 4921, 23)),
+            { jsx: a } = await n.e(455).then(n.t.bind(n, 4455, 23)),
+            { jsxs: c } = await n.e(455).then(n.t.bind(n, 4455, 23));
+          function s(t) {
+            var e = t.loading;
+            return a('div', {
+              className: e ? i.loadingWrapper : '',
+              children: a('div', {
+                className: i.spin,
+                children: c('span', {
+                  className: ''.concat(i.spinDot, ' ').concat(i.spinDotSpin),
+                  children: [
+                    a('i', { className: i.dotItem }),
+                    a('i', { className: i.dotItem }),
+                    a('i', { className: i.dotItem }),
+                    a('i', { className: i.dotItem }),
+                  ],
+                }),
+              }),
+            });
+          }
+          t();
+        },
+        1,
+      );
+    },
     3562: function (t, e, n) {
       'use strict';
       n.a(
@@ -139,7 +175,7 @@
         async function (t) {
           n.d(e, {
             Z: function () {
-              return o;
+              return l;
             },
           });
           var i = n(5123),
@@ -147,40 +183,40 @@
             c = n(2998),
             s = n.n(c),
             r = n(6511),
-            A = n.n(r);
-          const { default: d } = await n.e(365).then(n.t.bind(n, 4662, 23)),
-            { jsx: u } = await n.e(455).then(n.t.bind(n, 4455, 23)),
-            { jsxs: l } = await n.e(455).then(n.t.bind(n, 4455, 23));
-          function o(t) {
+            d = n.n(r);
+          const { default: u } = await n.e(365).then(n.t.bind(n, 4662, 23)),
+            { jsx: A } = await n.e(455).then(n.t.bind(n, 4455, 23)),
+            { jsxs: o } = await n.e(455).then(n.t.bind(n, 4455, 23));
+          function l(t) {
             var e = t.humidity,
               n = t.rain,
               i = t.wind_speed;
-            return u('div', {
-              className: d.tag,
-              children: u('div', {
-                className: d.tagInner,
-                children: l('ul', {
+            return A('div', {
+              className: u.tag,
+              children: A('div', {
+                className: u.tagInner,
+                children: o('ul', {
                   children: [
-                    l('li', {
-                      className: d.blue,
+                    o('li', {
+                      className: u.blue,
                       children: [
-                        u('div', { children: u('img', { src: s() }) }),
-                        l('span', { className: d.value, children: [n, '%'] }),
+                        A('div', { children: A('img', { src: s() }) }),
+                        o('span', { className: u.value, children: [n, '%'] }),
                       ],
                     }),
-                    l('li', {
-                      className: d.blue,
+                    o('li', {
+                      className: u.blue,
                       children: [
-                        u('div', { children: u('img', { src: a() }) }),
-                        l('span', { className: d.value, children: [e, '%'] }),
+                        A('div', { children: A('img', { src: a() }) }),
+                        o('span', { className: u.value, children: [e, '%'] }),
                       ],
                     }),
-                    l('li', {
-                      className: d.blue,
+                    o('li', {
+                      className: u.blue,
                       children: [
-                        u('div', { children: u('img', { src: A() }) }),
-                        l('span', {
-                          className: d.value,
+                        A('div', { children: A('img', { src: d() }) }),
+                        o('span', {
+                          className: u.value,
                           children: [i, ' km/h'],
                         }),
                       ],
@@ -211,30 +247,30 @@
             s = t([c]);
           c = (s.then ? await s : s)[0];
           const { default: r } = await n.e(813).then(n.t.bind(n, 7813, 23)),
-            { default: A } = await n.e(797).then(n.t.bind(n, 8797, 23)),
-            { useEffect: d, useState: u } = await n
+            { default: d } = await n.e(797).then(n.t.bind(n, 8797, 23)),
+            { useEffect: u, useState: A } = await n
               .e(910)
               .then(n.t.bind(n, 9910, 23)),
-            { default: l } = await n.e(164).then(n.t.bind(n, 4164, 23)),
-            { jsx: o } = await n.e(455).then(n.t.bind(n, 4455, 23)),
+            { default: o } = await n.e(164).then(n.t.bind(n, 4164, 23)),
+            { jsx: l } = await n.e(455).then(n.t.bind(n, 4455, 23)),
             { jsxs: h } = await n.e(455).then(n.t.bind(n, 4455, 23));
           a(), a(), a(), a(), a(), a(), a();
           function p(t) {
-            var e = u(),
+            var e = A(),
               n = r(e, 2),
               i = n[0],
               a = n[1];
             return (
-              d(() => {
+              u(() => {
                 var e = t.weekList.reduce(
                   (t, e) => (
                     t.push({
                       id: e.dt,
-                      title: (0, c.x2)(l(l.unix(e.dt)).day()),
+                      title: (0, c.x2)(o(o.unix(e.dt)).day()),
                       img:
                         (0, c.EJ)(e.weather[0].main) && c.H$[e.weather[0].main],
-                      tempHigh: e.temp.max,
-                      tempLow: e.temp.min,
+                      tempHigh: e.temp.max.toFixed(0),
+                      tempLow: e.temp.min.toFixed(0),
                     }),
                     t
                   ),
@@ -242,11 +278,11 @@
                 );
                 a(e);
               }, [t.weekList]),
-              o('div', {
-                className: A.week,
-                children: o('div', {
-                  className: A.weekInner,
-                  children: o('ul', {
+              l('div', {
+                className: d.week,
+                children: l('div', {
+                  className: d.weekInner,
+                  children: l('ul', {
                     children:
                       null === i || void 0 === i
                         ? void 0
@@ -255,35 +291,35 @@
                               'li',
                               {
                                 children: [
-                                  o('div', {
-                                    className: A.title,
+                                  l('div', {
+                                    className: d.title,
                                     children: t.title,
                                   }),
-                                  o('div', {
-                                    children: o('img', {
-                                      className: A.weekImg,
+                                  l('div', {
+                                    children: l('img', {
+                                      className: d.weekImg,
                                       src: t.img,
                                     }),
                                   }),
                                   h('div', {
-                                    className: A.temp,
+                                    className: d.temp,
                                     children: [
                                       h('span', {
-                                        className: A.high,
+                                        className: d.high,
                                         children: [
                                           t.tempHigh,
-                                          o('span', {
-                                            className: A.unit,
+                                          l('span', {
+                                            className: d.unit,
                                             children: '\xb0C',
                                           }),
                                         ],
                                       }),
                                       h('span', {
-                                        className: A.low,
+                                        className: d.low,
                                         children: [
                                           t.tempLow,
-                                          o('span', {
-                                            className: A.unit,
+                                          l('span', {
+                                            className: d.unit,
                                             children: '\xb0C',
                                           }),
                                         ],
@@ -313,7 +349,7 @@
           n.r(e),
             n.d(e, {
               default: function () {
-                return x;
+                return C;
               },
             });
           var i = n(2231),
@@ -321,30 +357,33 @@
             c = n.n(a),
             s = n(3562),
             r = n(3024),
-            A = n(8284),
-            d = n(78),
-            u = n(2306),
-            l = n(9228),
-            o = t([d, A, r, s, l, u, i]);
-          [d, A, r, s, l, u, i] = o.then ? await o : o;
-          const { default: h } = await n.e(634).then(n.t.bind(n, 5634, 23)),
-            { default: p } = await n.e(894).then(n.t.bind(n, 9894, 23)),
-            { default: m } = await n.e(813).then(n.t.bind(n, 7813, 23)),
-            { useLocation: f } = await n.e(412).then(n.t.bind(n, 4412, 23)),
-            { default: w } = await n.e(989).then(n.t.bind(n, 6989, 23)),
-            { useEffect: g, useState: v } = await n
+            d = n(8284),
+            u = n(78),
+            A = n(2306),
+            o = n(9228),
+            l = n(7109),
+            h = n(3419),
+            p = t([u, d, r, s, o, l, A, i, h]);
+          [u, d, r, s, o, l, A, i, h] = p.then ? await p : p;
+          const { default: m } = await n.e(634).then(n.t.bind(n, 5634, 23)),
+            { default: f } = await n.e(894).then(n.t.bind(n, 9894, 23)),
+            { default: w } = await n.e(813).then(n.t.bind(n, 7813, 23)),
+            { useLocation: g } = await n.e(412).then(n.t.bind(n, 4412, 23)),
+            { default: v } = await n.e(989).then(n.t.bind(n, 6989, 23)),
+            { useEffect: b, useState: N } = await n
               .e(910)
               .then(n.t.bind(n, 9910, 23)),
-            { jsx: b } = await n.e(455).then(n.t.bind(n, 4455, 23)),
-            { jsxs: N } = await n.e(455).then(n.t.bind(n, 4455, 23));
-          function x() {
-            var t = f(),
-              e = t.query,
-              n = e.latitude,
-              a = e.longitude,
-              o = e.city,
-              x = e.province,
-              y = v({
+            { jsx: x } = await n.e(455).then(n.t.bind(n, 4455, 23)),
+            { jsxs: y } = await n.e(455).then(n.t.bind(n, 4455, 23));
+          function C() {
+            var t = (0, h.Z)(),
+              e = g(),
+              n = e.query,
+              a = n.latitude,
+              p = n.longitude,
+              C = n.city,
+              E = n.province,
+              S = N({
                 humidity: 0,
                 wind_speed: 0,
                 rain: 0,
@@ -354,88 +393,93 @@
                 daily: [],
                 hourly: [],
               }),
-              C = m(y, 2),
-              E = C[0],
-              B = C[1],
-              R = () => {
+              B = w(S, 2),
+              R = B[0],
+              k = B[1],
+              Z = () => {
                 i.m8.push('/');
               },
-              S = (function () {
-                var t = p(
-                  h.mark(function t() {
-                    var e;
-                    return h.wrap(function (t) {
+              L = (function () {
+                var e = f(
+                  m.mark(function e() {
+                    var n;
+                    return m.wrap(function (e) {
                       while (1)
-                        switch ((t.prev = t.next)) {
+                        switch ((e.prev = e.next)) {
                           case 0:
                             return (
-                              (t.next = 2),
-                              (0, u.p)({
-                                lat: Number(n),
-                                lon: Number(a),
+                              t.setLoadingState(!0),
+                              (e.next = 3),
+                              (0, A.p)({
+                                lat: Number(a),
+                                lon: Number(p),
                                 exclude: 'minutely',
                               })
                             );
-                          case 2:
-                            (e = t.sent),
-                              B({
-                                temp: e.current.temp,
-                                humidity: e.current.humidity,
-                                wind_speed: e.current.wind_speed,
-                                rain: e.current.rain ? e.current.rain['1h'] : 0,
-                                main: e.current.weather[0].main,
-                                mainList: e.current.weather,
-                                daily: e.daily,
-                                hourly: e.hourly,
+                          case 3:
+                            (n = e.sent),
+                              t.setLoadingState(!1),
+                              k({
+                                temp: n.current.temp.toFixed(0),
+                                humidity: n.current.humidity,
+                                wind_speed: n.current.wind_speed,
+                                rain: n.current.rain ? n.current.rain['1h'] : 0,
+                                main: n.current.weather[0].main,
+                                mainList: n.current.weather,
+                                daily: n.daily,
+                                hourly: n.hourly,
                               });
-                          case 4:
+                          case 6:
                           case 'end':
-                            return t.stop();
+                            return e.stop();
                         }
-                    }, t);
+                    }, e);
                   }),
                 );
                 return function () {
-                  return t.apply(this, arguments);
+                  return e.apply(this, arguments);
                 };
               })();
             return (
-              g(() => {
-                S();
+              b(() => {
+                L();
               }, []),
-              N('div', {
-                className: w.wrapper,
+              y('div', {
+                className: v.wrapper,
                 children: [
-                  b('div', {
-                    className: w.back,
-                    children: b('img', { onClick: R, src: c(), alt: 'back' }),
+                  x(l.Z, { loading: t.loading }),
+                  x('div', {
+                    className: v.back,
+                    children: x('img', { onClick: Z, src: c(), alt: 'back' }),
                   }),
-                  b('div', {
-                    className: w.weatherIcon,
-                    children: b('img', {
+                  x('div', {
+                    className: v.weatherIcon,
+                    children: x('img', {
                       width: 150,
-                      src: (0, l.EJ)(E.main) && l.H$[E.main],
+                      src: (0, o.EJ)(R.main) && o.H$[R.main],
                     }),
                   }),
-                  N('div', {
-                    className: w.location,
+                  y('div', {
+                    className: v.location,
                     children: [
-                      b('div', { children: o ? ''.concat(o, ',') : '' }),
-                      b('div', { className: w.province, children: x }),
+                      x('div', {
+                        children: C && 0 !== C.length ? ''.concat(C, ',') : '',
+                      }),
+                      x('div', { className: v.province, children: E }),
                     ],
                   }),
-                  N('div', {
-                    className: w.temperature,
-                    children: [E.temp, b('span', { children: '\xb0C' })],
+                  y('div', {
+                    className: v.temperature,
+                    children: [R.temp, x('span', { children: '\xb0C' })],
                   }),
-                  b(s.Z, {
-                    humidity: E.humidity,
-                    wind_speed: E.wind_speed,
-                    rain: E.rain,
+                  x(s.Z, {
+                    humidity: R.humidity,
+                    wind_speed: R.wind_speed,
+                    rain: R.rain,
                   }),
-                  b(r.Z, { hourList: E.hourly }),
-                  b(A.Z, { hourList: E.hourly }),
-                  b(d.Z, { weekList: E.daily }),
+                  x(r.Z, { hourList: R.hourly }),
+                  x(d.Z, { hourList: R.hourly }),
+                  x(u.Z, { weekList: R.daily }),
                 ],
               })
             );
@@ -459,7 +503,7 @@
             var e = s(),
               n = i(e, 2),
               r = n[0],
-              A = n[1];
+              d = n[1];
             return (
               c(() => {
                 var e = t.reduce(
@@ -467,19 +511,41 @@
                     n < 24 &&
                       t.push({
                         id: e.dt,
-                        temp: e.temp,
+                        temp: e.temp.toFixed(0),
                         time: a.unix(e.dt).format('H a'),
                       }),
                     t
                   ),
                   [],
                 );
-                A(e);
+                d(e);
               }, [t]),
               [r]
             );
           };
           (e['Z'] = r), t();
+        },
+        1,
+      );
+    },
+    3419: function (t, e, n) {
+      'use strict';
+      n.a(
+        t,
+        async function (t) {
+          const { default: i } = await n.e(813).then(n.t.bind(n, 7813, 23)),
+            { useState: a } = await n.e(910).then(n.t.bind(n, 9910, 23));
+          var c = () => {
+            var t = a(!1),
+              e = i(t, 2),
+              n = e[0],
+              c = e[1],
+              s = (t) => {
+                c(t);
+              };
+            return { loading: n, setLoadingState: s };
+          };
+          (e['Z'] = c), t();
         },
         1,
       );
@@ -500,6 +566,8 @@
           function s(t) {
             return i('https://api.openweathermap.org/data/2.5/onecall', {
               method: 'get',
+              useCache: !0,
+              timeout: 0,
               params: {
                 appid: c,
                 lat: t.lat,
@@ -534,10 +602,10 @@
               return r;
             },
             H$: function () {
-              return d;
+              return u;
             },
             EJ: function () {
-              return u;
+              return A;
             },
           });
           const { default: i } = await n.e(164).then(n.t.bind(n, 4164, 23)),
@@ -592,18 +660,18 @@
               (t[(t['\u5468\u4e94'] = 5)] = '\u5468\u4e94'),
               (t[(t['\u5468\u516d'] = 6)] = '\u5468\u516d');
           })(s || (s = {}));
-          var A = i().hour() > 18 || i().hour() < 6,
-            d = {
-              Thunderstorm: n(A ? 2436 : 3046),
-              Drizzle: n(A ? 6493 : 3779),
-              Rain: n(A ? 6493 : 3779),
-              Snow: n(A ? 3325 : 879),
-              Clear: n(A ? 1028 : 6229),
-              Clouds: n(A ? 3963 : 4389),
-              Atmosphere: n(A ? 1442 : 596),
+          var d = i().hour() > 18 || i().hour() < 6,
+            u = {
+              Thunderstorm: n(d ? 2436 : 3046),
+              Drizzle: n(d ? 6493 : 3779),
+              Rain: n(d ? 6493 : 3779),
+              Snow: n(d ? 3325 : 879),
+              Clear: n(d ? 1028 : 6229),
+              Clouds: n(d ? 3963 : 4389),
+              Atmosphere: n(d ? 1442 : 596),
             };
-          function u(t) {
-            return t in d;
+          function A(t) {
+            return t in u;
           }
           t();
         },
