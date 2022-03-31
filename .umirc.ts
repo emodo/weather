@@ -23,8 +23,8 @@ export default defineConfig({
   base: `${repo}`,
   publicPath: `${repo}`,
   webpack5: {},
-  dynamicImport: {},
-  mfsu,
+  // dynamicImport: {},
+  // mfsu,
   chainWebpack(config) {
     config.module
       .rule('ttf')
@@ -54,7 +54,7 @@ export default defineConfig({
               networkTimeoutSeconds: 6,
               expiration: {
                 maxEntries: 50,
-                maxAgeSeconds: 1 * 24 * 60 * 60, // 1 day
+                maxAgeSeconds: 10 * 60, // 10 minutes
               },
               cacheableResponse: {
                 statuses: [0, 200],
@@ -69,7 +69,7 @@ export default defineConfig({
               networkTimeoutSeconds: 6,
               expiration: {
                 maxEntries: 50,
-                maxAgeSeconds: 1 * 24 * 60 * 60, // 1 day
+                maxAgeSeconds: 10 * 60, // 10 minutes
               },
               cacheableResponse: {
                 statuses: [0, 200],
@@ -83,7 +83,7 @@ export default defineConfig({
               cacheName: 'seed-js',
               expiration: {
                 maxEntries: 20, //最多缓存20个，超过的按照LRU原则删除
-                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+                maxAgeSeconds: 10 * 60, // 10 minutes
               },
             },
           },
@@ -94,7 +94,7 @@ export default defineConfig({
               cacheName: 'seed-html',
               expiration: {
                 maxEntries: 20, //最多缓存20个，超过的按照LRU原则删除
-                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+                maxAgeSeconds: 10 * 60, // 10 minutes
               },
             },
           },
@@ -105,7 +105,7 @@ export default defineConfig({
               cacheName: 'seed-css',
               expiration: {
                 maxEntries: 30, //最多缓存30个，超过的按照LRU原则删除
-                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+                maxAgeSeconds: 10 * 60, // 10 minutes
               },
             },
           },
@@ -116,7 +116,7 @@ export default defineConfig({
               cacheName: 'seed-image',
               expiration: {
                 maxEntries: 30, //最多缓存30个，超过的按照LRU原则删除
-                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+                maxAgeSeconds: 10 * 60, // 10 minutes
               },
             },
           },

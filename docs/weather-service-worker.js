@@ -38,7 +38,7 @@ define(['./workbox-459c3508'], function (e) {
         cacheName: 'cached-api',
         networkTimeoutSeconds: 6,
         plugins: [
-          new e.ExpirationPlugin({ maxEntries: 50, maxAgeSeconds: 86400 }),
+          new e.ExpirationPlugin({ maxEntries: 50, maxAgeSeconds: 600 }),
           new e.CacheableResponsePlugin({ statuses: [0, 200] }),
         ],
       }),
@@ -50,7 +50,7 @@ define(['./workbox-459c3508'], function (e) {
         cacheName: 'cached-weather-api',
         networkTimeoutSeconds: 6,
         plugins: [
-          new e.ExpirationPlugin({ maxEntries: 50, maxAgeSeconds: 86400 }),
+          new e.ExpirationPlugin({ maxEntries: 50, maxAgeSeconds: 600 }),
           new e.CacheableResponsePlugin({ statuses: [0, 200] }),
         ],
       }),
@@ -61,7 +61,7 @@ define(['./workbox-459c3508'], function (e) {
       new e.CacheFirst({
         cacheName: 'seed-js',
         plugins: [
-          new e.ExpirationPlugin({ maxEntries: 20, maxAgeSeconds: 2592e3 }),
+          new e.ExpirationPlugin({ maxEntries: 20, maxAgeSeconds: 600 }),
         ],
       }),
       'GET',
@@ -71,7 +71,7 @@ define(['./workbox-459c3508'], function (e) {
       new e.CacheFirst({
         cacheName: 'seed-html',
         plugins: [
-          new e.ExpirationPlugin({ maxEntries: 20, maxAgeSeconds: 2592e3 }),
+          new e.ExpirationPlugin({ maxEntries: 20, maxAgeSeconds: 600 }),
         ],
       }),
       'GET',
@@ -81,7 +81,7 @@ define(['./workbox-459c3508'], function (e) {
       new e.CacheFirst({
         cacheName: 'seed-css',
         plugins: [
-          new e.ExpirationPlugin({ maxEntries: 30, maxAgeSeconds: 2592e3 }),
+          new e.ExpirationPlugin({ maxEntries: 30, maxAgeSeconds: 600 }),
         ],
       }),
       'GET',
@@ -91,7 +91,7 @@ define(['./workbox-459c3508'], function (e) {
       new e.CacheFirst({
         cacheName: 'seed-image',
         plugins: [
-          new e.ExpirationPlugin({ maxEntries: 30, maxAgeSeconds: 2592e3 }),
+          new e.ExpirationPlugin({ maxEntries: 30, maxAgeSeconds: 600 }),
         ],
       }),
       'GET',
