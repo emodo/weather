@@ -6,6 +6,8 @@ import Store from 'store';
 export function getWeather(params: weatherParams) {
   return request('https://api.openweathermap.org/data/2.5/onecall', {
     method: 'get',
+    useCache: true,
+    timeout: 0,
     params: {
       appid,
       lat: params.lat,

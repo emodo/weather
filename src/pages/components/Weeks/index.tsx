@@ -68,8 +68,8 @@ export default function Week(props: { weekList: dailyTypes[] }) {
         img:
           isValidParams(cur.weather[0].main) &&
           WeatherStatus[cur.weather[0].main],
-        tempHigh: cur.temp.max,
-        tempLow: cur.temp.min,
+        tempHigh: cur.temp.max.toFixed(0),
+        tempLow: cur.temp.min.toFixed(0),
       });
       return arr;
     }, []);

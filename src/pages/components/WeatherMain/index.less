@@ -87,7 +87,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 10px 10px 0;
+  padding: 5px 10px 0;
 }
 
 .tag {
@@ -95,7 +95,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
 
   width: 72px;
   min-height: 16px;
@@ -119,4 +119,15 @@
 .tag2 {
   width: 50px;
   background: rgba(106, 117, 186, 0.5);
+}
+
+@media screen and (min-width: 600px) {
+  .weatherMain {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .weatherMainInner {
+    width: 500px;
+  }
 }

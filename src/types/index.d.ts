@@ -64,13 +64,13 @@ export interface weatherInfoDetailTypes extends weatherInfoTypes {
 export type hourTypes = {
   id: number;
   time: string;
-  temp: number;
+  temp: string;
 };
 
 export type weekTypes = {
   id: number;
   title: string;
   img: string;
-  tempHigh: number;
-  tempLow: number;
+  tempHigh: string;
+  tempLow: string;
 };

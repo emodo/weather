@@ -6,6 +6,8 @@ import Store from 'store';
 export function regeo(params: geoParams) {
   return request('https://restapi.amap.com/v3/geocode/regeo', {
     method: 'get',
+    useCache: true,
+    timeout: 0,
     params: {
       key,
       location: params.location,

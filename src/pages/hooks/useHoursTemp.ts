@@ -10,7 +10,7 @@ const useHoursTemp = (hourListProps: hourlyTypes[]) => {
       if (index < 24) {
         arr.push({
           id: cur.dt,
-          temp: cur.temp,
+          temp: cur.temp.toFixed(0),
           time: dayjs.unix(cur.dt).format('H a'),
         });
       }

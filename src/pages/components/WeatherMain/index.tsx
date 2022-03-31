@@ -1,6 +1,7 @@
 import { history } from 'umi';
 import styles from './index.less';
 import WeatherSub from '../WeatherSub';
+import Loading from '../Loading';
 import { regeo } from '@/service/gaode';
 import { getWeather } from '@/service/weather';
 import { useEffect, useState } from 'react';
@@ -8,10 +9,13 @@ import { getLocation, getToday, WeatherStatus, isValidParams } from '@/utils';
 import { location, locationInfo, weatherInfoTypes } from '@/types';
 import dayjs from 'dayjs';
 import Store from 'store';
+import useLoading from '@/pages/hooks/useLoading';
 
 const currentWeek = getToday(dayjs().day());
 
 export default function weatherMain() {
+  const loading = useLoading();
+
   const [locationInfo, setLocationInfo] = useState<locationInfo>({
     city: '',
     province: '',
@@ -69,6 +73,7 @@ export default function weatherMain() {
   };
 
   const init = async () => {
+    loading.setLoadingState(true);
     const res = await getCity();
 
     const weather = await getWeather({
@@ -78,13 +83,14 @@ export default function weatherMain() {
     });
 
     setWeatherInfo({
-      temp: weather.current.temp,
+      temp: weather.current.temp.toFixed(0),
       humidity: weather.current.humidity,
       wind_speed: weather.current.wind_speed,
       rain: weather.current.rain ? weather.current.rain['1h'] : 0,
       main: weather.current.weather[0].main,
-      mainList: weather.current.weather,
+      mainList: weather.current.weather[0].description.split('，'),
     });
+    loading.setLoadingState(false);
   };
 
   useEffect(() => {
@@ -93,6 +99,7 @@ export default function weatherMain() {
 
   return (
     <div className={styles.weatherMain}>
+      <Loading loading={loading.loading} />
       <div className={styles.weatherMainInner}>
         <div className={styles.weatherIcon}>
           <img
@@ -104,7 +111,11 @@ export default function weatherMain() {
         </div>
         <div className={styles.location}>
           {locationInfo
-            ? `${locationInfo.city}，${locationInfo.province}`
+            ? `${
+                locationInfo.city && locationInfo.city.length !== 0
+                  ? `${locationInfo.city},`
+                  : ''
+              } ${locationInfo.province}`
             : '杭州市，浙江省'}
         </div>
         <div className={styles.weatherInfo}>
@@ -126,7 +137,7 @@ export default function weatherMain() {
                 key={index}
                 className={`${styles.tag} ${styles[`tag${index + 1}`]}`}
               >
-                {item.description}
+                {item}
               </div>
             ))}
           </div>
