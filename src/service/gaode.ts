@@ -1,6 +1,7 @@
 import request from 'umi-request';
 const key = '9beaca4a70567e0f31a65babde588854';
 import { geoParams } from './gaode.d';
+import Store from 'store';
 
 export function regeo(params: geoParams) {
   return request('https://restapi.amap.com/v3/geocode/regeo', {
@@ -9,7 +10,14 @@ export function regeo(params: geoParams) {
       key,
       location: params.location,
     },
-  }).then(function (response) {
-    return response.regeocode.addressComponent;
-  });
+  })
+    .then(function (response) {
+      Store.set('regeocode', response.regeocode.addressComponent);
+      return response.regeocode.addressComponent;
+    })
+    .catch(function (error) {
+      console.log(Store.get('regeocode'), '111111');
+
+      return Store.get('regeocode');
+    });
 }

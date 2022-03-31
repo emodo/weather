@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { getLocation, getToday, WeatherStatus, isValidParams } from '@/utils';
 import { location, locationInfo, weatherInfoTypes } from '@/types';
 import dayjs from 'dayjs';
+import Store from 'store';
 
 const currentWeek = getToday(dayjs().day());
 
@@ -55,8 +56,14 @@ export default function weatherMain() {
   };
 
   const getCity = async () => {
-    const res = await getLocation();
-    setLocation(res);
+    let res;
+    try {
+      res = await getLocation();
+      setLocation(res);
+    } catch (e) {
+      res = Store.get('location');
+    }
+
     getRegeo(res);
     return res;
   };

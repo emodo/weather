@@ -1,5 +1,6 @@
 import { location } from '@/types';
 import dayjs from 'dayjs';
+import Store from 'store';
 
 export function getLocation(): Promise<location> {
   return new Promise((resolve, reject) => {
@@ -7,10 +8,12 @@ export function getLocation(): Promise<location> {
       // 检测是否支持地理定位,支持则获取经纬度
       navigator.geolocation.getCurrentPosition(
         (res) => {
-          resolve({
+          const locationRes = {
             latitude: res.coords.latitude,
             longitude: res.coords.longitude,
-          });
+          };
+          Store.set('location', locationRes);
+          resolve(locationRes);
         },
         (err) => {
           // 获取用户位置失败返回错误

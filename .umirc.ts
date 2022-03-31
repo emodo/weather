@@ -1,7 +1,12 @@
 import { defineConfig } from 'umi';
-const { GenerateSW } = require('workbox-webpack-plugin');
+const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
 
 const repo = process.env.NODE_ENV === 'development' ? '/' : '/weather/';
+
+const mfsu =
+  process.env.NODE_ENV === 'development'
+    ? {}
+    : { production: { output: '.mfsu-production' } };
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
@@ -17,12 +22,20 @@ export default defineConfig({
   outputPath: 'docs',
   base: `${repo}`,
   publicPath: `${repo}`,
+  webpack5: {},
+  dynamicImport: {},
+  mfsu,
   chainWebpack(config) {
     config.module
       .rule('ttf')
       .test(/.(woff|eot|woff2|ttf)$/)
       .use('file-loader')
       .loader('file-loader');
+    // config.plugin('workbox').use(InjectManifest, [{
+    //   swSrc: './src/sw.js',
+    //   swDest: `${repo}weather-service-worker.js`,
+    //   compileSrc: false,
+    // }]);
     config.plugin('workbox').use(GenerateSW, [
       {
         cacheId: 'webpack-pwa', // 设置前缀
@@ -38,7 +51,7 @@ export default defineConfig({
             handler: 'NetworkFirst',
             options: {
               cacheName: 'cached-api',
-              networkTimeoutSeconds: 2,
+              networkTimeoutSeconds: 6,
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 1 * 24 * 60 * 60, // 1 day
@@ -53,7 +66,7 @@ export default defineConfig({
             handler: 'NetworkFirst',
             options: {
               cacheName: 'cached-weather-api',
-              networkTimeoutSeconds: 2,
+              networkTimeoutSeconds: 6,
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 1 * 24 * 60 * 60, // 1 day
